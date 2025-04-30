@@ -1,6 +1,139 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "configMigration": true,
+  "dependencyDashboard": true,
+  "osvVulnerabilityAlerts": true,
   "extends": [
-    "config:recommended"
+    "config:best-practices"
+  ],
+  "prConcurrentLimit": 10,
+  "branchConcurrentLimit": 10,
+  "prHourlyLimit": 0,
+  "ignorePaths": ["**/build/**","**/deploy/**"],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": [
+      "cve"
+    ]
+  },
+  "packageRules": [
+    {
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "npm dev dependencies",
+      "groupSlug": "npm-dev-dependencies",
+      "labels": ["renovate", "npm", "dev-dependencies"],
+      "matchPackageNames": [
+        "*"
+      ]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "npm non-major dependencies",
+      "groupSlug": "npm-minor-patch",
+      "labels": ["renovate", "npm", "minor-patch-dependencies"],
+      "matchPackageNames": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "matchDatasources": ["npm"],
+      "groupName": "npm major dependencies",
+      "groupSlug": "npm-major",
+      "labels": ["renovate", "npm", "major-dependencies"],
+      "matchPackageNames": [
+        "*"
+      ],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "groupName": "angular monorepo",
+      "labels": ["renovate", "npm", "angular", "angular-dependencies"],
+      "matchPackageNames": [
+        "@angular/**",
+        "@angular/cli",
+        "@angular-eslint/**",
+        "@angular/material",
+        "@angular/cdk",
+        "@angular-devkit/**"
+      ],
+      "matchUpdateTypes": [
+        "digest",
+        "patch",
+        "minor",
+        "major"
+      ]
+    },
+    {
+      "matchDatasources": ["nuget"],
+      "groupName": "nuget non-major dependencies",
+      "groupSlug": "nuget-minor-patch",
+      "labels": ["renovate", "nuget", "minor-patch-dependencies"],
+      "matchPackageNames": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "matchDatasources": ["nuget"],
+      "groupName": "nuget major dependencies",
+      "groupSlug": "nuget-major",
+      "labels": ["renovate", "nuget", "major-dependencies"],
+      "matchPackageNames": [
+        "*"
+      ],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "groupName": ".NET Core Docker containers",
+      "matchDatasources": [
+        "docker"
+      ],
+      "labels": ["renovate", "docker", "dotnet", "dotnet-dependencies"],
+      "matchPackageNames": [
+        "mcr.microsoft.com/dotnet/**"
+      ]
+    },
+    {
+      "matchDatasources": ["nuget"],
+      "groupSlug": "nuget-telemetry",
+      "extends": [
+        "monorepo:aspnet-health-checks"
+      ],
+      "labels": ["renovate", "nuget", "dotnet", "telemetry-dependencies"],
+      "matchPackageNames": [
+        "OpenTelemetry**",
+        "prometheus-net**",
+        "Serilog**",
+        "Minio**",
+        "AspNetCore.HealthChecks**"
+      ],
+      "groupName": "Telemetry packages"
+    },
+    {
+      "extends": [
+        "monorepo:aspnet aspnetwebstack",
+        "monorepo:aspnet extensions",
+        "monorepo:aspnet-api-versioning"
+      ],
+      "groupName": "aspnet all monorepo",
+      "labels": ["renovate", "nuget", "dotnet", "aspnet-dependencies"],
+      "matchUpdateTypes": [
+        "digest",
+        "patch",
+        "minor",
+        "major"
+      ]
+    }
+  ],
+  "labels": [
+    "renovate"
   ]
 }
