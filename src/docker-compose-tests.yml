@@ -2,16 +2,16 @@ version: '3.4'
 
 services:
   sql-data-test:
-    image: mcr.microsoft.com/mssql/server:2017-latest 
+    image: mcr.microsoft.com/mssql/server:2017-latest@sha256:0ee8b0ae2e442b7f58a2813456d9d9e6e8923c140200672cf8683bbc6b88386d 
 
   nosql-data-test:
-    image: mongo
+    image: mongo@sha256:cc62438c8ef61ce02f89b4f7c026e735df4580e8cd8857980d12e0eae73bf044
 
   basket-data-test:
-    image: redis:alpine
+    image: redis:alpine@sha256:f773b35a95e170d92dd4214a3ec4859b1b7960bf56896ae687646d695f311187
 
   rabbitmq-test:
-    image: rabbitmq:3-management-alpine
+    image: rabbitmq:3-management-alpine@sha256:878d4697c9c7dded8458670adaff1e45a9c2bc19c7e82d1a06b8a70adfc76142
 
   identity-api-test:
     image: ${REGISTRY:-eshop}/identity-api-test:${TAG:-latest}

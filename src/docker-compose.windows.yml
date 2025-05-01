@@ -6,16 +6,16 @@ version: '3.4'
 
 services:
   sqldata:
-    image: mcr.microsoft.com/mssql/server:2017-latest 
+    image: mcr.microsoft.com/mssql/server:2017-latest@sha256:0ee8b0ae2e442b7f58a2813456d9d9e6e8923c140200672cf8683bbc6b88386d 
 
   nosqldata:
-    image: mongo:windowsservercore
+    image: mongo:windowsservercore@sha256:0872d7ff7f55bd18f2e00854a7932546bfeeb0401928ab7e9206b5d3d3061c46
 
   basket.data:
-    image: redis:nanoserver
+    image: redis:nanoserver@sha256:810b22ec3e6009d23067e8e83c8a2ac4a2ca20200d0512caf40b171d03457cec
 
   rabbitmq:
-    image: spring2/rabbitmq
+    image: spring2/rabbitmq@sha256:a90c6352281163301c04b38b1154d6df63e806ecac0386163854c8dbcc02fc1a
 
   identity-api:
     build:
