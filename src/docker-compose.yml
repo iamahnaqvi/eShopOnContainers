@@ -99,10 +99,10 @@ services:
       - sqldata
 
   mobileshoppingapigw:
-    image: envoyproxy/envoy:v1.11.1
+    image: envoyproxy/envoy:v1.34.0@sha256:45d37d848802f98a5647cb7522b4c1c42e0e0e775913d8e253ef3a5856bef986
 
   mobilemarketingapigw:
-    image: envoyproxy/envoy:v1.11.1
+    image: envoyproxy/envoy:v1.34.0@sha256:45d37d848802f98a5647cb7522b4c1c42e0e0e775913d8e253ef3a5856bef986
 
   mobileshoppingagg:
     image: ${REGISTRY:-eshop}/mobileshoppingagg:${PLATFORM:-linux}-${TAG:-latest}
@@ -186,7 +186,7 @@ services:
       - webhooks-api
 
   webshoppingapigw:
-    image: envoyproxy/envoy:v1.11.1
+    image: envoyproxy/envoy:v1.34.0@sha256:45d37d848802f98a5647cb7522b4c1c42e0e0e775913d8e253ef3a5856bef986
 
   webmarketingapigw:
-    image: envoyproxy/envoy:v1.11.1
+    image: envoyproxy/envoy:v1.34.0@sha256:45d37d848802f98a5647cb7522b4c1c42e0e0e775913d8e253ef3a5856bef986
