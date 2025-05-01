@@ -4,7 +4,7 @@
   "dependencyDashboard": true,
   "osvVulnerabilityAlerts": true,
   "extends": [
-    "config:recommended"
+    "config:best-practices"
   ],
   "prConcurrentLimit": 50,
   "branchConcurrentLimit": 50,
