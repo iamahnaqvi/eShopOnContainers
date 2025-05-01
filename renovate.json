@@ -3,9 +3,6 @@
   "configMigration": true,
   "dependencyDashboard": true,
   "osvVulnerabilityAlerts": true,
-  "extends": [
-    "config:best-practices"
-  ],
   "prConcurrentLimit": 50,
   "branchConcurrentLimit": 50,
   "prHourlyLimit": 0,
