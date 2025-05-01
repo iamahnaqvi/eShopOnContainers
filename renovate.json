@@ -48,7 +48,6 @@
       "matchUpdateTypes": ["major"]
     },
     {
-      "matchDatasources": ["npm"],
       "extends": [
         "monorepo:angular",
         "monorepo:angular-cli",
