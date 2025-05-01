@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.0-buster
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster@sha256:ed737e6920105e2a5cdcd13b9697e7973011e5619339ea64e30871ba0b53fec8
 ARG BUILD_CONFIGURATION=Debug
 ENV ASPNETCORE_ENVIRONMENT=Development
 ENV DOTNET_USE_POLLING_FILE_WATCHER=true
