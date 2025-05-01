@@ -6,8 +6,8 @@
   "extends": [
     "config:best-practices"
   ],
-  "prConcurrentLimit": 10,
-  "branchConcurrentLimit": 10,
+  "prConcurrentLimit": 50,
+  "branchConcurrentLimit": 50,
   "prHourlyLimit": 0,
   "ignorePaths": ["**/build/**","**/deploy/**"],
   "vulnerabilityAlerts": {
