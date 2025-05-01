@@ -47,15 +47,17 @@
       ],
       "matchUpdateTypes": ["major"]
     },
-    {
-      "extends": [
-        "monorepo:angular",
-        "monorepo:angular-cli",
-        "monorepo:angular-eslint",
-        "monorepo:angularmaterial"
-      ],
+    {      
       "groupName": "angular monorepo",
       "labels": ["renovate", "npm", "angular", "angular-dependencies"],
+      "matchPackageNames": [
+        "@angular**/**",
+        "@angular/cli",
+        "@angular-eslint**/**",
+        "@angular/material",
+        "@angular/cdk",
+        "@angular-devkit**/**"
+      ],
       "matchUpdateTypes": [
         "digest",
         "patch",
