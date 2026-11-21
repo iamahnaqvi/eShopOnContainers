@@ -1,7 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "configMigration": true,
-  "dependencyDashboard": true,
+  "dependencyDashboard": {
+    "enabled": true
+  },
   "osvVulnerabilityAlerts": true,
   "prConcurrentLimit": 50,
   "branchConcurrentLimit": 50,
